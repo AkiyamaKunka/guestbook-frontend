@@ -10,6 +10,11 @@ RUN yum -y install wget make yum-utils
 # Install python dependencies
 RUN yum-builddep python -y
 
+# Install tools needed
+RUN yum -y install gcc
+RUN yum -y install vim
+RUN yum -y install mariadb-devel
+
 # Download the python3.7.3
 RUN wget -O /tmp/Python-3.7.3.tgz https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz
 
@@ -35,3 +40,9 @@ RUN yum clean all
 
 RUN pip3 install ipython
 RUN pip3 install bpython
+RUN pip3 install pipenv
+
+ENV PYTHONUNBUFFERED 1
+RUN mkdir /code
+WORKDIR /code
+COPY . /code/
