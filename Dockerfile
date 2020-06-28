@@ -15,12 +15,12 @@ RUN yum -y install gcc
 RUN yum -y install vim
 RUN yum -y install mariadb-devel
 
-# Download the python3.7.3
-RUN wget -O /tmp/Python-3.7.3.tgz https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz
+# Download the python3.8.3
+RUN wget -O /tmp/Python-3.8.3.tgz https://www.python.org/ftp/python/3.8.3/Python-3.8.3.tgz
 
-# Build and install python3.7.3
-RUN tar -zxvf /tmp/Python-3.7.3.tgz -C /tmp/
-RUN /tmp/Python-3.7.3/configure
+# Build and install python3.8.3
+RUN tar -zxvf /tmp/Python-3.8.3.tgz -C /tmp/
+RUN /tmp/Python-3.8.3/configure
 RUN make && make install
 
 # Create symbolic link
@@ -35,7 +35,7 @@ RUN pip install --upgrade pip
 RUN sed -i 's/python/python2/' /usr/bin/yum
 
 # Clean
-RUN rm -rf /tmp/Python-3.7.3*
+RUN rm -rf /tmp/Python-3.8.3*
 RUN yum clean all
 
 RUN pip3 install ipython
