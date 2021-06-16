@@ -1,5 +1,5 @@
 # Set the base image to use to centos 7
-FROM centos:8
+FROM centos:7
 
 # Set the file maintainer
 MAINTAINER haoranyu(haoran_yu@hotmail.com)
