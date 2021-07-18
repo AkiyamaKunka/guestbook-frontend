@@ -1,0 +1,19 @@
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router'
+import './assets/tailwindcss.css'
+import axios from 'axios'
+
+axios.defaults.withCredentials = true
+
+Vue.config.productionTip = false
+Vue.prototype.$http = axios.create({
+  baseURL: 'http://localhost:8001/guestbook/',
+  timeout: 3000,
+  // headers: {'X-Custom-Header': 'foobar'}
+});
+
+new Vue({
+  router,
+  render: h => h(App)
+}).$mount('#app')
