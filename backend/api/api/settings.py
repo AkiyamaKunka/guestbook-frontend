@@ -106,10 +106,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+# I really do not know what the hell is this... But seems you need to add this JWT to make your vote work
 JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=7),
     'JWT_AUTH_HEADER_PREFIX': 'JWT',
-    'JWT_RESPONSE_PAYLOAD_HANDLER': 'guestbook.utils.jwt_response_payload_handler',                     #JWT跟前端保持一致，比如“token”这里设置成JWT
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'guestbook.utils.jwt_response_payload_handler',
 }
 
 # Internationalization
