@@ -5,10 +5,12 @@ import './assets/tailwindcss.css'
 import axios from 'axios'
 
 axios.defaults.withCredentials = true
+axios.defaults.xsrfHeaderName = 'X-CSRFTOKEN'
+axios.defaults.xsrfCookieName = 'csrftoken'
 
 Vue.config.productionTip = false
 Vue.prototype.$http = axios.create({
-  baseURL: 'http://localhost:8001/guestbook/',
+  baseURL: 'http://localhost:8001/',
   timeout: 3000,
   // headers: {'X-Custom-Header': 'foobar'}
 });

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import datetime
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,7 +40,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'guestbook',
-
 ]
 
 MIDDLEWARE = [
@@ -106,6 +106,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=7),
+    'JWT_AUTH_HEADER_PREFIX': 'JWT',
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'guestbook.utils.jwt_response_payload_handler',                     #JWT跟前端保持一致，比如“token”这里设置成JWT
+}
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -133,26 +139,29 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ORIGIN_WHITELIST = ()
-
+# CORS_ORIGIN_WHITELIST = (
+#
+# )
 CORS_ALLOW_METHODS = (
     'DELETE',
     'GET',
     'OPTIONS',
-    'РАТCН',
+    'PATCH',
     'POST',
     'PUT',
     'VIEW',
 )
 
 CORS_ALLOW_HEADERS = (
-    'accept',
+    'XMLHttpRequest',
+    'X_FILENAME',
     'accept-encoding',
     'authorization',
     'content-type',
     'dnt',
     'origin',
     'user-agent',
-    'x-csrftoken'
+    'x-csrftoken',
     'x-requested-with',
+    'Pragma',
 )
