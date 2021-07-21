@@ -1,5 +1,5 @@
 # Bulletin
-* An Bulletin Web Application, developed by Vue.js 2.x and Django 3.0 Rest Framework APIs.
+* An Bulletin Web Application, developed by Vue.js 2.x and Django 3.x + Django Rest Framework(DRF) APIs.
 * "Register, Login, Leave your Comment, and Thumbs Up"
 
 
