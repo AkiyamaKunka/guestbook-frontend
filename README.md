@@ -1,6 +1,6 @@
-## Bulletin
+# Bulletin : Register, Login, Leave your Comment, and Thumbs Up
 
-# Deployment
+## Deployment
 
 ### Compiles and hot-reloads for development
 in the directory of "frontend/installing-tailwindcss-with-vue-cli"
