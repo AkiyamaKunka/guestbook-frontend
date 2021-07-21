@@ -1,5 +1,7 @@
 # Bulletin
-Register, Login, Leave your Comment, and Thumbs Up
+* An Bulletin Web Application, developed by Vue.js 2.x and Django 3.0 Rest Framework APIs.
+* "Register, Login, Leave your Comment, and Thumbs Up"
+
 
 ## Deployment
 
