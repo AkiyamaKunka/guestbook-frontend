@@ -1,4 +1,5 @@
-# Bulletin : Register, Login, Leave your Comment, and Thumbs Up
+# Bulletin
+Register, Login, Leave your Comment, and Thumbs Up
 
 ## Deployment
 
